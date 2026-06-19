@@ -21,7 +21,7 @@
     <div class="wrap">
       <header class="site-header">
         <a class="logo" href="#top">StarsWillBleed</a>
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="#projects">Projects</a>
           <a href="#experiments">Experiments</a>
           <a href="#about">About</a>
@@ -35,7 +35,7 @@
           <h1>StarsWillBleed</h1>
           <p class="lead">I build games inside Roblox Studio. Incremental systems, procedural generation, and the occasional reason to be afraid of yellow wallpaper.</p>
 
-          <div class="console" role="img" aria-label="Mock terminal showing a script loading sequence">
+          <div class="console" role="region" aria-label="Mock terminal showing a script loading sequence">
             <div class="console-bar"><span></span><span></span><span></span></div>
             <pre class="console-body"><code><span class="c-dim">&gt;</span> require(super cool scripter guy)
 loading idle_dice_incremental...
@@ -54,25 +54,25 @@ loading backrooms_generator...
 
           <div class="projects">
             <article class="project">
-              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="Idle Dice Incremental" data-tag="Incremental · Live on Roblox" data-description="An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve from go[...]">
+              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="Idle Dice Incremental" data-tag="Incremental · Live on Roblox" data-description="An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates.">
                 <img src="IdleDice1.png" alt="Idle Dice Incremental gameplay — dice list with roll, ascend, and prestige controls" loading="lazy" width="640" height="360">
               </div>
               <div class="project-body">
                 <h3>Idle Dice Incremental</h3>
                 <p class="project-tag">Incremental · Live on Roblox</p>
-                <p>An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve from go[...]</p>
+                <p>An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates.</p>
                 <a class="project-link" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">Play on Roblox →</a>
               </div>
             </article>
 
             <article class="project">
-              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="The Backrooms" data-tag="Horror · Procedural · Live on Roblox" data-description="A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally[...]">
+              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="The Backrooms" data-tag="Horror · Procedural · Live on Roblox" data-description="A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark.">
                 <img src="BackroomsMainMenu.png" alt="The Backrooms main menu, styled like a damaged VHS recording" loading="lazy" width="640" height="360">
               </div>
               <div class="project-body">
                 <h3>The Backrooms</h3>
                 <p class="project-tag">Horror · Procedural · Live on Roblox</p>
-                <p>A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally[...]</p>
+                <p>A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark.</p>
                 <a class="project-link" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">Play on Roblox →</a>
               </div>
             </article>
@@ -108,8 +108,9 @@ loading backrooms_generator...
 
             <article class="experiment">
               <div class="clickable-media" role="button" tabindex="0" data-title="Melee Combat System" data-tag="Systems · Hit detection" data-description="A melee system built to test hitbox registration and combo timing in Luau.">
-                <video class="experiment-video" preload="metadata" width="400" height="300">
+                <video class="experiment-video" preload="metadata" width="400" height="300" aria-label="Melee Combat System demonstration">
                   <source src="combatSystem.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
                 </video>
               </div>
               <div class="experiment-body">
@@ -124,7 +125,7 @@ loading backrooms_generator...
         <section id="about">
           <p class="eyebrow">// about</p>
           <div class="about-panel">
-            <p>I make games inside Roblox Studio, mostly solo. Most of what runs under the hood is Luau — progression math for incremental loops, generation logic for mazes and levels, the systems work [...]</p>
+            <p>I make games inside Roblox Studio, mostly solo. Most of what runs under the hood is Luau — progression math for incremental loops, generation logic for mazes and levels, the systems that make idle games feel like they're always doing something. I'm interested in game feel, player retention mechanics, and building things that feel rewarding to play with.</p>
           </div>
         </section>
 
@@ -143,8 +144,8 @@ loading backrooms_generator...
     </div>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal" style="display: none;">
-      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <div id="lightbox-modal" class="lightbox-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <button class="lightbox-close" aria-label="Close lightbox">×</button>
       <div class="lightbox-container">
         <div class="lightbox-media">
           <img id="lightbox-image" src="" alt="" style="display: none;">
@@ -173,6 +174,7 @@ loading backrooms_generator...
       const lightboxTitle = document.getElementById('lightbox-title');
       const lightboxTag = document.getElementById('lightbox-tag');
       const lightboxDescription = document.getElementById('lightbox-description');
+      let lastFocusedElement = null;
 
       clickableMedias.forEach(media => {
         media.addEventListener('click', openLightbox);
@@ -190,6 +192,9 @@ loading backrooms_generator...
         const description = this.dataset.description;
         const img = this.querySelector('img');
         const video = this.querySelector('video');
+
+        // Store the element that triggered the lightbox for focus restoration
+        lastFocusedElement = document.activeElement;
 
         lightboxTitle.textContent = title;
         lightboxTag.textContent = tag;
@@ -210,11 +215,25 @@ loading backrooms_generator...
         }
 
         lightboxModal.style.display = 'flex';
+        
+        // Move focus to the close button
+        lightboxClose.focus();
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
         lightboxModal.style.display = 'none';
         lightboxVideo.pause();
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+        
+        // Restore focus to the element that opened the lightbox
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
       }
 
       lightboxClose.addEventListener('click', closeLightbox);
