@@ -54,9 +54,9 @@ loading backrooms_generator...
 
           <div class="projects">
             <article class="project">
-              <a class="project-shot" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">
+              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="Idle Dice Incremental" data-tag="Incremental · Live on Roblox" data-description="An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve from go[...]">
                 <img src="IdleDice1.png" alt="Idle Dice Incremental gameplay — dice list with roll, ascend, and prestige controls" loading="lazy" width="640" height="360">
-              </a>
+              </div>
               <div class="project-body">
                 <h3>Idle Dice Incremental</h3>
                 <p class="project-tag">Incremental · Live on Roblox</p>
@@ -66,9 +66,9 @@ loading backrooms_generator...
             </article>
 
             <article class="project">
-              <a class="project-shot" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">
+              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="The Backrooms" data-tag="Horror · Procedural · Live on Roblox" data-description="A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally[...]">
                 <img src="BackroomsMainMenu.png" alt="The Backrooms main menu, styled like a damaged VHS recording" loading="lazy" width="640" height="360">
-              </a>
+              </div>
               <div class="project-body">
                 <h3>The Backrooms</h3>
                 <p class="project-tag">Horror · Procedural · Live on Roblox</p>
@@ -85,7 +85,9 @@ loading backrooms_generator...
 
           <div class="experiments">
             <article class="experiment">
-              <img src="IncrementalBoard.png" alt="Rebirths and upgrades board from a scrapped incremental prototype" loading="lazy" width="400" height="300">
+              <div class="clickable-media" role="button" tabindex="0" data-title="Untitled Incremental" data-tag="Prototype · Scrapped" data-description="An earlier rebirth/upgrade loop, shelved once Idle Dice Incremental took the same idea somewhere better.">
+                <img src="IncrementalBoard.png" alt="Rebirths and upgrades board from a scrapped incremental prototype" loading="lazy" width="400" height="300">
+              </div>
               <div class="experiment-body">
                 <h4>Untitled Incremental</h4>
                 <p class="project-tag">Prototype · Scrapped</p>
@@ -94,7 +96,9 @@ loading backrooms_generator...
             </article>
 
             <article class="experiment">
-              <img src="RokakakaModel.png" alt="3D model of a spiked fruit made for a cancelled JoJo's Bizarre Adventure-inspired game" loading="lazy" width="400" height="300">
+              <div class="clickable-media" role="button" tabindex="0" data-title="Rokakaka Model" data-tag="3D Modeling · Cancelled project" data-description="Built for a JoJo's Bizarre Adventure-inspired game that never made it past pre-production.">
+                <img src="RokakakaModel.png" alt="3D model of a spiked fruit made for a cancelled JoJo's Bizarre Adventure-inspired game" loading="lazy" width="400" height="300">
+              </div>
               <div class="experiment-body">
                 <h4>Rokakaka Model</h4>
                 <p class="project-tag">3D Modeling · Cancelled project</p>
@@ -103,9 +107,11 @@ loading backrooms_generator...
             </article>
 
             <article class="experiment">
-              <video class="experiment-video" controls preload="metadata" poster="https://via.placeholder.com/400x300" width="400" height="300">
-                <source src="combatSystem.mp4" type="video/mp4">
-              </video>
+              <div class="clickable-media" role="button" tabindex="0" data-title="Melee Combat System" data-tag="Systems · Hit detection" data-description="A melee system built to test hitbox registration and combo timing in Luau.">
+                <video class="experiment-video" preload="metadata" width="400" height="300">
+                  <source src="combatSystem.mp4" type="video/mp4">
+                </video>
+              </div>
               <div class="experiment-body">
                 <h4>Melee Combat System</h4>
                 <p class="project-tag">Systems · Hit detection</p>
@@ -136,8 +142,91 @@ loading backrooms_generator...
       </footer>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal" style="display: none;">
+      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <div class="lightbox-container">
+        <div class="lightbox-media">
+          <img id="lightbox-image" src="" alt="" style="display: none;">
+          <video id="lightbox-video" controls style="display: none;">
+            <source id="lightbox-video-source" src="" type="video/mp4">
+          </video>
+        </div>
+        <div class="lightbox-info">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-tag" class="project-tag"></p>
+          <p id="lightbox-description"></p>
+        </div>
+      </div>
+    </div>
+
     <script>
       document.getElementById('yr').textContent = new Date().getFullYear();
+
+      // Lightbox functionality
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxClose = document.querySelector('.lightbox-close');
+      const clickableMedias = document.querySelectorAll('.clickable-media');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxVideo = document.getElementById('lightbox-video');
+      const lightboxVideoSource = document.getElementById('lightbox-video-source');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxTag = document.getElementById('lightbox-tag');
+      const lightboxDescription = document.getElementById('lightbox-description');
+
+      clickableMedias.forEach(media => {
+        media.addEventListener('click', openLightbox);
+        media.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox.call(media);
+          }
+        });
+      });
+
+      function openLightbox() {
+        const title = this.dataset.title;
+        const tag = this.dataset.tag;
+        const description = this.dataset.description;
+        const img = this.querySelector('img');
+        const video = this.querySelector('video');
+
+        lightboxTitle.textContent = title;
+        lightboxTag.textContent = tag;
+        lightboxDescription.textContent = description;
+
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'none';
+
+        if (img) {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt;
+          lightboxImage.style.display = 'block';
+        } else if (video) {
+          const source = video.querySelector('source');
+          lightboxVideoSource.src = source.src;
+          lightboxVideo.load();
+          lightboxVideo.style.display = 'block';
+        }
+
+        lightboxModal.style.display = 'flex';
+      }
+
+      function closeLightbox() {
+        lightboxModal.style.display = 'none';
+        lightboxVideo.pause();
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+          closeLightbox();
+        }
+      });
     </script>
   </body>
 </html>
