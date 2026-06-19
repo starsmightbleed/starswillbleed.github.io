@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>StarsWillBleed — Roblox Studio Developer</title>
     <meta name="description" content="StarsWillBleed builds Roblox experiences with Luau — incremental systems, procedural generation, and the games in between." />
+
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
   </head>
+
   <body>
     <div class="stars" aria-hidden="true"></div>
 
     <div class="wrap">
       <header class="site-header">
-        <a class="logo" href="#top"><img src="portfolioLogo.png" alt="StarsWillBleed logo" /></a>
+        <a class="logo" href="#top">
+          <img src="portfolioLogo.png" alt="StarsWillBleed logo">
+        </a>
+
         <nav aria-label="Main navigation">
           <a href="#projects">Projects</a>
           <a href="#experiments">Experiments</a>
@@ -32,11 +39,20 @@
       <main>
         <section class="hero" id="top">
           <p class="eyebrow">// roblox studio · luau</p>
+
           <h1>StarsWillBleed</h1>
-          <p class="lead">I build games inside Roblox Studio. Incremental systems, procedural generation, and the occasional reason to be afraid of yellow wallpaper.</p>
+
+          <p class="lead">
+            I build games inside Roblox Studio. Incremental systems, procedural generation, and the occasional reason to be afraid of yellow wallpaper.
+          </p>
 
           <div class="console" role="region" aria-label="Mock terminal showing a script loading sequence">
-            <div class="console-bar"><span></span><span></span><span></span></div>
+            <div class="console-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
             <pre class="console-body"><code><span class="c-dim">&gt;</span> require(super cool scripter guy)
 loading idle_dice_incremental...
 loading backrooms_generator...
@@ -54,25 +70,45 @@ loading backrooms_generator...
 
           <div class="projects">
             <article class="project">
-              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="Idle Dice Incremental" data-tag="Incremental · Live on Roblox" data-description="An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates."
+              <div
+                class="project-shot clickable-media"
+                role="button"
+                tabindex="0"
+                data-title="Idle Dice Incremental"
+                data-tag="Incremental · Live on Roblox"
+                data-description="An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates."
+              >
                 <img src="IdleDice1.png" alt="Idle Dice Incremental gameplay — dice list with roll, ascend, and prestige controls" loading="lazy" width="640" height="360">
               </div>
+
               <div class="project-body">
                 <h3>Idle Dice Incremental</h3>
                 <p class="project-tag">Incremental · Live on Roblox</p>
-                <p>An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates.</p>
+                <p>
+                  An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve challenging without artificial gates.
+                </p>
                 <a class="project-link" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">Play on Roblox →</a>
               </div>
             </article>
 
             <article class="project">
-              <div class="project-shot clickable-media" role="button" tabindex="0" data-title="The Backrooms" data-tag="Horror · Procedural · Live on Roblox" data-description="A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark."
+              <div
+                class="project-shot clickable-media"
+                role="button"
+                tabindex="0"
+                data-title="The Backrooms"
+                data-tag="Horror · Procedural · Live on Roblox"
+                data-description="A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark."
+              >
                 <img src="BackroomsMainMenu.png" alt="The Backrooms main menu, styled like a damaged VHS recording" loading="lazy" width="640" height="360">
               </div>
+
               <div class="project-body">
                 <h3>The Backrooms</h3>
                 <p class="project-tag">Horror · Procedural · Live on Roblox</p>
-                <p>A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark.</p>
+                <p>
+                  A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally watches from the dark.
+                </p>
                 <a class="project-link" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">Play on Roblox →</a>
               </div>
             </article>
@@ -85,9 +121,17 @@ loading backrooms_generator...
 
           <div class="experiments">
             <article class="experiment">
-              <div class="clickable-media" role="button" tabindex="0" data-title="Untitled Incremental" data-tag="Prototype · Scrapped" data-description="An upgrade board, forgotten once Idle Dice Incremental made the same idea better."
+              <div
+                class="clickable-media"
+                role="button"
+                tabindex="0"
+                data-title="Untitled Incremental"
+                data-tag="Prototype · Scrapped"
+                data-description="An upgrade board, forgotten once Idle Dice Incremental made the same idea better."
+              >
                 <img src="IncrementalBoard.png" alt="Rebirths and upgrades board from a scrapped incremental prototype" loading="lazy" width="400" height="300">
               </div>
+
               <div class="experiment-body">
                 <h4>Untitled Incremental</h4>
                 <p class="project-tag">Prototype · Scrapped</p>
@@ -96,9 +140,17 @@ loading backrooms_generator...
             </article>
 
             <article class="experiment">
-              <div class="clickable-media" role="button" tabindex="0" data-title="Rokakaka Model" data-tag="3D Modeling · Cancelled project" data-description="Made for a JoJo's Bizarre Adventure-inspired game that never made it past pre-production."
+              <div
+                class="clickable-media"
+                role="button"
+                tabindex="0"
+                data-title="Rokakaka Model"
+                data-tag="3D Modeling · Cancelled project"
+                data-description="Made for a JoJo's Bizarre Adventure-inspired game that never made it past pre-production."
+              >
                 <img src="RokakakaModel.png" alt="3D model of a spiked fruit made for a cancelled JoJo's Bizarre Adventure-inspired game" loading="lazy" width="400" height="300">
               </div>
+
               <div class="experiment-body">
                 <h4>Rokakaka Model</h4>
                 <p class="project-tag">3D Modeling · Cancelled project</p>
@@ -107,12 +159,20 @@ loading backrooms_generator...
             </article>
 
             <article class="experiment">
-              <div class="clickable-media" role="button" tabindex="0" data-title="Melee Combat System" data-tag="Systems · Hit detection" data-description="A melee system built to test hitbox registration and combo timing in Luau."
+              <div
+                class="clickable-media"
+                role="button"
+                tabindex="0"
+                data-title="Melee Combat System"
+                data-tag="Systems · Hit detection"
+                data-description="A melee system built to test hitbox registration and combo timing in Luau."
+              >
                 <video class="experiment-video" preload="metadata" width="400" height="300" aria-label="Melee Combat System demonstration">
                   <source src="combatSystem.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
+
               <div class="experiment-body">
                 <h4>Melee Combat System</h4>
                 <p class="project-tag">Systems · Hit detection</p>
@@ -124,13 +184,17 @@ loading backrooms_generator...
 
         <section id="about">
           <p class="eyebrow">// about</p>
+
           <div class="about-panel">
-            <p>I am from the UK, more so a beginner scripter but I can get the job done if you tell me what needs doing. My main weaknesses are a lack of creativity, which is why I love when someone else gives me a prompt to create something, as I struggle to come up with ideas on my own.</p>
+            <p>
+              I am from the UK, more so a beginner scripter but I can get the job done if you tell me what needs doing. My main weaknesses are a lack of creativity, which is why I love when someone else gives me a prompt to create something, as I struggle to come up with ideas on my own.
+            </p>
           </div>
         </section>
 
         <section id="contact">
           <p class="eyebrow">// contact</p>
+
           <div class="contact-panel">
             <a class="btn btn-primary" href="https://www.roblox.com/users/546376029/profile/" target="_blank" rel="noopener">Roblox profile</a>
             <a class="btn btn-ghost" href="mailto:starsmightbleed@gmail.com">Email</a>
@@ -143,16 +207,18 @@ loading backrooms_generator...
       </footer>
     </div>
 
-    <!-- Lightbox Modal -->
     <div id="lightbox-modal" class="lightbox-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
       <button class="lightbox-close" aria-label="Close lightbox">×</button>
+
       <div class="lightbox-container">
         <div class="lightbox-media">
           <img id="lightbox-image" src="" alt="" style="display: none;">
+
           <video id="lightbox-video" controls style="display: none;">
             <source id="lightbox-video-source" src="" type="video/mp4">
           </video>
         </div>
+
         <div class="lightbox-info">
           <h3 id="lightbox-title"></h3>
           <p id="lightbox-tag" class="project-tag"></p>
@@ -164,7 +230,6 @@ loading backrooms_generator...
     <script>
       document.getElementById('yr').textContent = new Date().getFullYear();
 
-      // Lightbox functionality
       const lightboxModal = document.getElementById('lightbox-modal');
       const lightboxClose = document.querySelector('.lightbox-close');
       const clickableMedias = document.querySelectorAll('.clickable-media');
@@ -174,13 +239,15 @@ loading backrooms_generator...
       const lightboxTitle = document.getElementById('lightbox-title');
       const lightboxTag = document.getElementById('lightbox-tag');
       const lightboxDescription = document.getElementById('lightbox-description');
+
       let lastFocusedElement = null;
 
       clickableMedias.forEach(media => {
         media.addEventListener('click', openLightbox);
-        media.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
+
+        media.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
             openLightbox.call(media);
           }
         });
@@ -193,56 +260,55 @@ loading backrooms_generator...
         const img = this.querySelector('img');
         const video = this.querySelector('video');
 
-        // Store the element that triggered the lightbox for focus restoration
         lastFocusedElement = document.activeElement;
 
-        lightboxTitle.textContent = title;
-        lightboxTag.textContent = tag;
-        lightboxDescription.textContent = description;
+        lightboxTitle.textContent = title || '';
+        lightboxTag.textContent = tag || '';
+        lightboxDescription.textContent = description || '';
 
         lightboxImage.style.display = 'none';
         lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
 
         if (img) {
-          lightboxImage.src = img.src;
+          lightboxImage.src = img.getAttribute('src');
           lightboxImage.alt = img.alt;
           lightboxImage.style.display = 'block';
         } else if (video) {
           const source = video.querySelector('source');
-          lightboxVideoSource.src = source.src;
-          lightboxVideo.load();
-          lightboxVideo.style.display = 'block';
+
+          if (source) {
+            lightboxVideoSource.src = source.getAttribute('src');
+            lightboxVideo.load();
+            lightboxVideo.style.display = 'block';
+          }
         }
 
         lightboxModal.style.display = 'flex';
-        
-        // Move focus to the close button
         lightboxClose.focus();
-        
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
         lightboxModal.style.display = 'none';
         lightboxVideo.pause();
-        
-        // Restore body scroll
         document.body.style.overflow = '';
-        
-        // Restore focus to the element that opened the lightbox
+
         if (lastFocusedElement) {
           lastFocusedElement.focus();
         }
       }
 
       lightboxClose.addEventListener('click', closeLightbox);
-      lightboxModal.addEventListener('click', (e) => {
-        if (e.target === lightboxModal) closeLightbox();
+
+      lightboxModal.addEventListener('click', event => {
+        if (event.target === lightboxModal) {
+          closeLightbox();
+        }
       });
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && lightboxModal.style.display === 'flex') {
           closeLightbox();
         }
       });
