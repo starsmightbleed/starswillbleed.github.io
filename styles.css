@@ -92,6 +92,7 @@ body{
   margin-left: 20px;
   text-decoration: none;
   font-size: 14px;
+  transition: color 0.2s ease;
 }
 .site-header nav a:hover,
 .site-header nav a:focus-visible{ color: var(--white); }
@@ -175,6 +176,8 @@ section{ margin-top: 64px; }
   font-size: 14px;
   text-decoration: none;
   border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
 }
 .btn-primary{
   background: var(--violet);
@@ -210,6 +213,7 @@ section{ margin-top: 64px; }
   border: 1px solid var(--panel-line);
   border-radius: 10px;
   padding: 22px;
+  transition: border-color 0.2s ease;
 }
 
 .project-shot{
@@ -257,6 +261,7 @@ section{ margin-top: 64px; }
   font-size: 14px;
   text-decoration: none;
   border-bottom: 1px solid var(--violet-dim);
+  transition: border-color 0.2s ease;
 }
 .project-link:hover,
 .project-link:focus-visible{ border-color: var(--violet); }
@@ -280,6 +285,7 @@ section{ margin-top: 64px; }
   border: 1px solid var(--panel-line);
   border-radius: 10px;
   overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
 .experiment img,
@@ -290,6 +296,7 @@ section{ margin-top: 64px; }
   object-fit: cover;
   filter: saturate(0.75) brightness(0.9);
   background: #000;
+  transition: filter 0.2s ease;
 }
 
 .experiment-body{ padding: 16px; }
@@ -312,13 +319,26 @@ section{ margin-top: 64px; }
 
 .clickable-media{
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
 }
-.clickable-media:hover,
-.clickable-media:focus-visible{
-  transform: scale(1.02);
-  filter: brightness(1.05);
+
+@media (prefers-reduced-motion: no-preference){
+  .clickable-media{
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  .clickable-media:hover,
+  .clickable-media:focus-visible{
+    transform: scale(1.02);
+    filter: brightness(1.05);
+  }
 }
+
+@media (prefers-reduced-motion: reduce){
+  .clickable-media:hover,
+  .clickable-media:focus-visible{
+    filter: brightness(1.05);
+  }
+}
+
 .clickable-media:focus-visible{
   outline: 2px solid var(--violet);
   outline-offset: 2px;
@@ -336,6 +356,18 @@ section{ margin-top: 64px; }
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .lightbox-modal{
+    animation: none;
+  }
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
 }
 
 .lightbox-close{
@@ -357,9 +389,13 @@ section{ margin-top: 64px; }
   z-index: 1001;
 }
 .lightbox-close:hover,
-.lightbox-close:focus{ 
+.lightbox-close:focus-visible{ 
   background: var(--panel);
   color: var(--violet);
+}
+.lightbox-close:focus-visible{
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
 }
 
 .lightbox-container{
@@ -372,6 +408,24 @@ section{ margin-top: 64px; }
   border: 1px solid var(--panel-line);
   border-radius: 12px;
   overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .lightbox-container{
+    animation: none;
+  }
+}
+
+@keyframes slideUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .lightbox-media{
