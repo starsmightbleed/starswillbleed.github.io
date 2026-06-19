@@ -1,141 +1,138 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>StarsWillBleed — Roblox Studio Developer</title>
-<meta name="description" content="StarsWillBleed builds Roblox experiences with Luau — incremental systems, procedural generation, and the games in between." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>StarsWillBleed — Roblox Studio Developer</title>
+    <meta name="description" content="StarsWillBleed builds Roblox experiences with Luau — incremental systems, procedural generation, and the games in between." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
 
-<div class="stars" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="logo" href="#top">StarsWillBleed</a>
+        <nav>
+          <a href="#projects">Projects</a>
+          <a href="#experiments">Experiments</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-<div class="wrap">
+      <main>
+        <section class="hero" id="top">
+          <p class="eyebrow">// roblox studio · luau</p>
+          <h1>StarsWillBleed</h1>
+          <p class="lead">I build games inside Roblox Studio. Incremental systems, procedural generation, and the occasional reason to be afraid of yellow wallpaper.</p>
 
-  <header class="site-header">
-    <a class="logo" href="#top">StarsWillBleed</a>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#experiments">Experiments</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="hero" id="top">
-      <p class="eyebrow">// roblox studio · luau</p>
-      <h1>StarsWillBleed</h1>
-      <p class="lead">I build games inside Roblox Studio. Incremental systems, procedural generation, and the occasional reason to be afraid of yellow wallpaper.</p>
-
-      <div class="console" role="img" aria-label="Mock terminal showing a script loading sequence">
-        <div class="console-bar"><span></span><span></span><span></span></div>
-        <pre class="console-body"><code><span class="c-dim">&gt;</span> require(StarsWillBleed)
+          <div class="console" role="img" aria-label="Mock terminal showing a script loading sequence">
+            <div class="console-bar"><span></span><span></span><span></span></div>
+            <pre class="console-body"><code><span class="c-dim">&gt;</span> require(StarsWillBleed)
 loading idle_dice_incremental...
 loading backrooms_generator...
 <span class="c-violet">studio ready</span><span class="cursor">_</span></code></pre>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost" href="https://www.roblox.com/users/546376029/profile/" target="_blank" rel="noopener">Roblox profile</a>
-      </div>
-    </section>
-
-    <section id="projects">
-      <p class="eyebrow">// projects</p>
-
-      <div class="projects">
-
-        <article class="project">
-          <a class="project-shot" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">
-            <img src="assets/images/IdleDice1.png" alt="Idle Dice Incremental gameplay — dice list with roll, ascend, and prestige controls" loading="lazy" width="640" height="360">
-          </a>
-          <div class="project-body">
-            <h3>Idle Dice Incremental</h3>
-            <p class="project-tag">Incremental · Live on Roblox</p>
-            <p>An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve from going flat.</p>
-            <a class="project-link" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">Play on Roblox →</a>
           </div>
-        </article>
 
-        <article class="project">
-          <a class="project-shot" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">
-            <img src="assets/images/BackroomsMainMenu.png" alt="The Backrooms main menu, styled like a damaged VHS recording" loading="lazy" width="640" height="360">
-          </a>
-          <div class="project-body">
-            <h3>The Backrooms</h3>
-            <p class="project-tag">Horror · Procedural · Live on Roblox</p>
-            <p>A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally decides to start hunting.</p>
-            <a class="project-link" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">Play on Roblox →</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-ghost" href="https://www.roblox.com/users/546376029/profile/" target="_blank" rel="noopener">Roblox profile</a>
           </div>
-        </article>
+        </section>
 
-      </div>
-    </section>
+        <section id="projects">
+          <p class="eyebrow">// projects</p>
 
-    <section id="experiments">
-      <p class="eyebrow">// experiments</p>
-      <p class="section-note">Smaller things along the way — some scrapped, some just practice.</p>
+          <div class="projects">
+            <article class="project">
+              <a class="project-shot" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">
+                <img src="assets/images/IdleDice1.png" alt="Idle Dice Incremental gameplay — dice list with roll, ascend, and prestige controls" loading="lazy" width="640" height="360">
+              </a>
+              <div class="project-body">
+                <h3>Idle Dice Incremental</h3>
+                <p class="project-tag">Incremental · Live on Roblox</p>
+                <p>An idle game built around dice instead of clicks. Rolls happen automatically, an ascension loop resets progress for permanent bonuses, and a card system keeps the prestige curve from go[...]</p>
+                <a class="project-link" href="https://www.roblox.com/games/130801526239116/Idle-Dice-Incremental" target="_blank" rel="noopener">Play on Roblox →</a>
+              </div>
+            </article>
 
-      <div class="experiments">
-
-        <article class="experiment">
-          <img src="assets/images/IncrementalBoard.png" alt="Rebirths and upgrades board from a scrapped incremental prototype" loading="lazy" width="400" height="300">
-          <div class="experiment-body">
-            <h4>Untitled Incremental</h4>
-            <p class="project-tag">Prototype · Scrapped</p>
-            <p>An earlier rebirth/upgrade loop, shelved once Idle Dice Incremental took the same idea somewhere better.</p>
+            <article class="project">
+              <a class="project-shot" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">
+                <img src="assets/images/BackroomsMainMenu.png" alt="The Backrooms main menu, styled like a damaged VHS recording" loading="lazy" width="640" height="360">
+              </a>
+              <div class="project-body">
+                <h3>The Backrooms</h3>
+                <p class="project-tag">Horror · Procedural · Live on Roblox</p>
+                <p>A procedurally generated maze of endless yellow corridors. Flashlight battery and stamina work against you, lights flicker on a timer that isn't quite random, and something occasionally[...]</p>
+                <a class="project-link" href="https://www.roblox.com/games/111615809117470/The-Backrooms" target="_blank" rel="noopener">Play on Roblox →</a>
+              </div>
+            </article>
           </div>
-        </article>
+        </section>
 
-        <article class="experiment">
-          <img src="assets/images/RokakakaModel.png" alt="3D model of a spiked fruit made for a cancelled JoJo's Bizarre Adventure-inspired game" loading="lazy" width="400" height="300">
-          <div class="experiment-body">
-            <h4>Rokakaka Model</h4>
-            <p class="project-tag">3D Modeling · Cancelled project</p>
-            <p>Built for a JoJo's Bizarre Adventure-inspired game that never made it past pre-production.</p>
+        <section id="experiments">
+          <p class="eyebrow">// experiments</p>
+          <p class="section-note">Smaller things along the way — some scrapped, some just practice.</p>
+
+          <div class="experiments">
+            <article class="experiment">
+              <img src="assets/images/IncrementalBoard.png" alt="Rebirths and upgrades board from a scrapped incremental prototype" loading="lazy" width="400" height="300">
+              <div class="experiment-body">
+                <h4>Untitled Incremental</h4>
+                <p class="project-tag">Prototype · Scrapped</p>
+                <p>An earlier rebirth/upgrade loop, shelved once Idle Dice Incremental took the same idea somewhere better.</p>
+              </div>
+            </article>
+
+            <article class="experiment">
+              <img src="assets/images/RokakakaModel.png" alt="3D model of a spiked fruit made for a cancelled JoJo's Bizarre Adventure-inspired game" loading="lazy" width="400" height="300">
+              <div class="experiment-body">
+                <h4>Rokakaka Model</h4>
+                <p class="project-tag">3D Modeling · Cancelled project</p>
+                <p>Built for a JoJo's Bizarre Adventure-inspired game that never made it past pre-production.</p>
+              </div>
+            </article>
+
+            <article class="experiment">
+              <video class="experiment-video" controls preload="metadata" poster="assets/images/combat-poster.jpg" width="400" height="300">
+                <source src="assets/video/combatSystem.mp4" type="video/mp4">
+              </video>
+              <div class="experiment-body">
+                <h4>Melee Combat System</h4>
+                <p class="project-tag">Systems · Hit detection</p>
+                <p>A melee system built to test hitbox registration and combo timing in Luau.</p>
+              </div>
+            </article>
           </div>
-        </article>
+        </section>
 
-        <article class="experiment">
-          <video class="experiment-video" controls preload="metadata" poster="assets/images/combat-poster.jpg" width="400" height="300">
-            <source src="assets/video/combatSystem.mp4" type="video/mp4">
-          </video>
-          <div class="experiment-body">
-            <h4>Melee Combat System</h4>
-            <p class="project-tag">Systems · Hit detection</p>
-            <p>A melee system built to test hitbox registration and combo timing in Luau.</p>
+        <section id="about">
+          <p class="eyebrow">// about</p>
+          <div class="about-panel">
+            <p>I make games inside Roblox Studio, mostly solo. Most of what runs under the hood is Luau — progression math for incremental loops, generation logic for mazes and levels, the systems work [...]</p>
           </div>
-        </article>
+        </section>
 
-      </div>
-    </section>
+        <section id="contact">
+          <p class="eyebrow">// contact</p>
+          <div class="contact-panel">
+            <a class="btn btn-primary" href="https://www.roblox.com/users/546376029/profile/" target="_blank" rel="noopener">Roblox profile</a>
+            <a class="btn btn-ghost" href="mailto:starsmightbleed@gmail.com">Email</a>
+          </div>
+        </section>
+      </main>
 
-    <section id="contact">
-      <p class="eyebrow">// contact</p>
-      <div class="contact-panel">
-        <a class="btn btn-primary" href="https://www.roblox.com/users/546376029/profile/" target="_blank" rel="noopener">Roblox profile</a>
-        <a class="btn btn-ghost" href="mailto:starsmightbleed@gmail.com">Email</a>
-      </div>
-    </section>
+      <footer>
+        <p>© <span id="yr"></span> StarsWillBleed</p>
+      </footer>
+    </div>
 
-  </main>
-
-  <footer>
-    <p>© <span id="yr"></span> StarsWillBleed</p>
-  </footer>
-
-</div>
-
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-</script>
-
-</body>
+    <script>
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
