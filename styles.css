@@ -31,7 +31,7 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- starfield (static CSS layer, no JS / no canvas) ---------- */
+/* ---------- starfield ---------- */
 
 .stars{
   position: fixed;
@@ -56,6 +56,7 @@ body{
 @media (prefers-reduced-motion: no-preference){
   .stars{ animation: twinkle 7s ease-in-out infinite; }
 }
+
 @keyframes twinkle{
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.75; }
@@ -79,12 +80,17 @@ body{
 }
 
 .logo{
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--white);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  line-height: 0;
+}
+
+.logo img{
+  display: block;
+  width: 120px;
+  max-width: 100%;
+  height: auto;
 }
 
 .site-header nav a{
@@ -94,10 +100,15 @@ body{
   font-size: 14px;
   transition: color 0.2s ease;
 }
-.site-header nav a:hover,
-.site-header nav a:focus-visible{ color: var(--white); }
 
-section{ margin-top: 64px; }
+.site-header nav a:hover,
+.site-header nav a:focus-visible{
+  color: var(--white);
+}
+
+section{
+  margin-top: 64px;
+}
 
 .eyebrow{
   font-family: var(--font-mono);
@@ -139,8 +150,10 @@ section{ margin-top: 64px; }
   padding: 10px 12px;
   border-bottom: 1px solid var(--panel-line);
 }
+
 .console-bar span{
-  width: 9px; height: 9px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--violet-dim);
   display: inline-block;
@@ -155,19 +168,33 @@ section{ margin-top: 64px; }
   color: var(--mist);
   white-space: pre-wrap;
 }
-.console-body .c-dim{ color: #6b6480; }
-.console-body .c-violet{ color: var(--violet); }
+
+.console-body .c-dim{
+  color: #6b6480;
+}
+
+.console-body .c-violet{
+  color: var(--violet);
+}
 
 .cursor{
   display: inline-block;
   color: var(--violet);
 }
+
 @media (prefers-reduced-motion: no-preference){
   .cursor{ animation: blink 1s step-end infinite; }
 }
-@keyframes blink{ 50%{ opacity: 0; } }
 
-.hero-actions{ display: flex; gap: 12px; flex-wrap: wrap; }
+@keyframes blink{
+  50%{ opacity: 0; }
+}
+
+.hero-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
 .btn{
   display: inline-block;
@@ -179,24 +206,32 @@ section{ margin-top: 64px; }
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
 }
+
 .btn-primary{
   background: var(--violet);
   color: var(--white);
 }
+
 .btn-primary:hover,
-.btn-primary:focus-visible{ background: #6a3cf2; }
+.btn-primary:focus-visible{
+  background: #6a3cf2;
+}
 
 .btn-ghost{
   border-color: var(--panel-line);
   color: var(--mist);
 }
+
 .btn-ghost:hover,
 .btn-ghost:focus-visible{
   border-color: var(--violet);
   color: var(--white);
 }
 
-.btn:focus-visible{ outline: 2px solid var(--violet); outline-offset: 2px; }
+.btn:focus-visible{
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
+}
 
 /* ---------- projects ---------- */
 
@@ -220,11 +255,14 @@ section{ margin-top: 64px; }
   display: block;
   flex-shrink: 0;
   width: 220px;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--panel-line);
   line-height: 0;
+  background: #000;
 }
+
 .project-shot img{
   display: block;
   width: 100%;
@@ -233,8 +271,11 @@ section{ margin-top: 64px; }
   filter: saturate(0.9);
   transition: filter 0.2s ease;
 }
+
 .project-shot:hover img,
-.project-shot:focus-visible img{ filter: saturate(1.1); }
+.project-shot:focus-visible img{
+  filter: saturate(1.1);
+}
 
 .project-body h3{
   font-family: var(--font-display);
@@ -263,8 +304,11 @@ section{ margin-top: 64px; }
   border-bottom: 1px solid var(--violet-dim);
   transition: border-color 0.2s ease;
 }
+
 .project-link:hover,
-.project-link:focus-visible{ border-color: var(--violet); }
+.project-link:focus-visible{
+  border-color: var(--violet);
+}
 
 /* ---------- experiments ---------- */
 
@@ -299,7 +343,9 @@ section{ margin-top: 64px; }
   transition: filter 0.2s ease;
 }
 
-.experiment-body{ padding: 16px; }
+.experiment-body{
+  padding: 16px;
+}
 
 .experiment-body h4{
   font-family: var(--font-display);
@@ -313,7 +359,10 @@ section{ margin-top: 64px; }
   font-size: 13px;
   color: var(--mist);
 }
-.experiment-body .project-tag{ margin-bottom: 8px; }
+
+.experiment-body .project-tag{
+  margin-bottom: 8px;
+}
 
 /* ---------- clickable media ---------- */
 
@@ -325,6 +374,7 @@ section{ margin-top: 64px; }
   .clickable-media{
     transition: transform 0.2s ease, filter 0.2s ease;
   }
+
   .clickable-media:hover,
   .clickable-media:focus-visible{
     transform: scale(1.02);
@@ -388,11 +438,13 @@ section{ margin-top: 64px; }
   transition: background 0.2s ease, color 0.2s ease;
   z-index: 1001;
 }
+
 .lightbox-close:hover,
-.lightbox-close:focus-visible{ 
+.lightbox-close:focus-visible{
   background: var(--panel);
   color: var(--violet);
 }
+
 .lightbox-close:focus-visible{
   outline: 2px solid var(--violet);
   outline-offset: 2px;
@@ -484,7 +536,10 @@ section{ margin-top: 64px; }
   padding: 24px;
 }
 
-.about-panel p{ margin: 0; font-size: 15px; }
+.about-panel p{
+  margin: 0;
+  font-size: 15px;
+}
 
 .contact-panel{
   display: flex;
@@ -507,6 +562,7 @@ footer{
   .lightbox-container{
     flex-direction: column;
   }
+
   .lightbox-info{
     flex: 0 0 auto;
     max-height: 40%;
@@ -515,37 +571,65 @@ footer{
 }
 
 @media (max-width: 680px){
-  .experiments{ grid-template-columns: repeat(2, 1fr); }
+  .experiments{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 540px){
-  .site-header{ flex-direction: column; align-items: flex-start; gap: 12px; }
-  .site-header nav a{ margin-left: 0; margin-right: 16px; }
-  .project{ flex-direction: column; }
-  .project-shot{ width: 100%; }
-  .experiments{ grid-template-columns: 1fr; }
-  
+  .site-header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .logo img{
+    width: 100px;
+  }
+
+  .site-header nav a{
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .project{
+    flex-direction: column;
+  }
+
+  .project-shot{
+    width: 100%;
+  }
+
+  .experiments{
+    grid-template-columns: 1fr;
+  }
+
   .lightbox-modal{
     padding: 10px;
   }
+
   .lightbox-close{
     top: 10px;
     right: 10px;
   }
+
   .lightbox-container{
     flex-direction: column;
     gap: 0;
     max-height: 90vh;
   }
+
   .lightbox-media{
     flex: 1;
     min-height: 300px;
   }
+
   .lightbox-info{
     flex: 0 0 auto;
     padding: 20px;
     border-top: 1px solid var(--panel-line);
   }
+
   .lightbox-info h3{
     font-size: 18px;
   }
